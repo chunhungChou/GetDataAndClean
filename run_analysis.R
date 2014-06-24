@@ -1,6 +1,6 @@
 
 #set workpath 
-#workPath <- "/Users/mac/Desktop/CH/course/Getting and Cleaning Data/project/data/UCI HAR Dataset"
+#workPath <- "/Users/mac/Desktop/CH/course/Getting and Cleaning Data/project/data/UCI HAR Dataset/"
 
 
 run_analysis <- function(workPath) {
