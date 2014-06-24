@@ -16,13 +16,16 @@ run_analysis <- function(workPath) {
   columnNames <- read.table("features.txt", header = FALSE)
   
   #read training data 
-  subject_train <- read.table("train/subject_train.txt", header = FALSE)
+  subject_train <- read.table(paste("train", .Platform$file.sep, "subject_train.txt", sep=""), header = FALSE)
+  #subject_train <- read.table("train/subject_train.txt", header = FALSE)
   names(subject_train) <- "Subject"
   
-  trainData <- read.table("train/X_train.txt", header = FALSE)
+  trainData <- read.table(paste("train", .Platform$file.sep,"X_train.txt", sep=""), header = FALSE)
+  #trainData <- read.table("train/X_train.txt", header = FALSE)
   names(trainData) <- columnNames[, 2]
   
-  trainLabel <- read.table("train/y_train.txt", header = FALSE)
+  trainLabel <- read.table(paste("train", .Platform$file.sep,"y_train.txt", sep=""), header = FALSE)
+  #trainLabel <- read.table("train/y_train.txt", header = FALSE)
   names(trainLabel) <- "Act_label"
   trainLabel$ID <- 1:nrow(trainLabel)
   
@@ -31,13 +34,16 @@ run_analysis <- function(workPath) {
   trainActivity <- trainActivity[o, -2]
   
   #read test data
-  subject_test <- read.table("test/subject_test.txt", header = FALSE)
+  subject_test <- read.table(paste("test", .Platform$file.sep, "subject_test.txt", sep=""), header = FALSE)
+  #subject_test <- read.table("test/subject_test.txt", header = FALSE)
   names(subject_test) <- "Subject"
   
-  testData <- read.table("test/X_test.txt", header = FALSE)
+  testData <- read.table(paste("test", .Platform$file.sep, "X_test.txt", sep=""), header = FALSE)
+  #testData <- read.table("test/X_test.txt", header = FALSE)
   names(testData) <- columnNames[, 2]
   
-  testLabel <- read.table("test/y_test.txt", header = FALSE)
+  testLabel <- read.table(paste("test", .Platform$file.sep, "y_test.txt", sep=""), header = FALSE)
+  #testLabel <- read.table("test/y_test.txt", header = FALSE)
   names(testLabel) <- "Act_label"
   testLabel$ID <- 1:nrow(testLabel)
   
